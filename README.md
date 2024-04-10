@@ -64,6 +64,8 @@
   }
   ```
 
+- `new Timestamp(System.currentTimeMillis())`
+
 ## Screenshots
 
 ![Authorized_Result.png](assets/Authorized_Result.png)
