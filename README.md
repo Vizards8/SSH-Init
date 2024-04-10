@@ -21,7 +21,7 @@
   - [JwtFilter.java](src%2Fmain%2Fjava%2Fcom%2Fexample%2FSSH_Init%2Fsecurity%2FJwtFilter.java): Filter all incoming
     requests and set Authentication Object in SecurityContextHolder if the credential is valid
 - Authorization:
-  - @PreAuthorize("hasAuthority('read')")
+  - `@PreAuthorize("hasAuthority('read')")`
 - Dao
   - [AbstractHibernateDao](src%2Fmain%2Fjava%2Fcom%2Fexample%2FSSH_Init%2Fdao%2FAbstractHibernateDao.java): Common
     Abstract Dao
@@ -37,7 +37,7 @@
     structure
   - [ErrorCode.java](src%2Fmain%2Fjava%2Fcom%2Fexample%2FSSH_Init%2Fdto%2FErrorCode.java): Customized Error Code
 - Validation
-  - @Valid on request parameter + @NotBlank on corresponding dto
+  - `@Valid` on request parameter + `@NotBlank` on corresponding dto fields
 
 ## Notes
 
