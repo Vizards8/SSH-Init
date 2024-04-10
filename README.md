@@ -41,8 +41,30 @@
 
 ## Notes
 
-- Use @JsonIgnore to avoid error: Could not write JSON: failed to lazily initialize a collection of role
+- Use `@JsonIgnore` to avoid error: Could not write JSON: failed to lazily initialize a collection of role
+- Avoid using `@Data` and instead use the following. `@Data` may cause a StackOverflowError when calling hashcode on a
+  circular dependency
+
+  ```java
+  @Getter
+  @Setter
+  @NoArgsConstructor
+  @AllArgsConstructor
+  @ToString
+  @Entity
+  @Table(name = "user")
+  public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_id")
+    private Long userId;
+    private String email;
+    private String password;
+    private String username;
+  }
+  ```
 
 ## Screenshots
+
 ![Authorized_Result.png](assets/Authorized_Result.png)
 ![Unauthorized_Result.png](assets/Unauthorized_Result.png)
